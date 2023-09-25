@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 id="message">SlowTestOne Loading...</h1>
+
+<script>
+    // Function to make an XHR/AJAX request
+    function makeRequest(url) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+
+        xhr.onload = function () {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                // Request was successful, update the message
+                document.getElementById("message").textContent = "SlowTestOne Page Load Complete";
+            } else {
+                // Request failed
+                document.getElementById("message").textContent = "SlowTestOne Failed to load page.";
+            }
+        };
+
+        xhr.onerror = function () {
+            // An error occurred during the request
+            document.getElementById("message").textContent = "SlowTestOne Failed to load page.";
+        };
+
+        xhr.send();
+    }
+
+    // Make the XHR/AJAX request to mysite.com/api/slowresponse
+    makeRequest("https://localhost:7061/api/Slow");
+</script>

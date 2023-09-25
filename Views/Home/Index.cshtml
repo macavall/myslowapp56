@@ -1,0 +1,50 @@
+﻿@page
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delay Page</title>
+</head>
+<body>
+@*     <header>
+        <nav>
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-controller="SlowTestOne" asp-action="Index">SlowTestOne</a></li>
+                <li><a asp-controller="SlowTestTwo" asp-action="Index">SlowTestTwo</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </nav>
+    </header> *@
+
+    <h1 id="message">Home Page Loading...</h1>
+
+    <script>
+        // Use setTimeout to delay rendering
+        setTimeout(function () {
+            // Change the message after the delay
+            document.getElementById("message").textContent = "Home Page Loading Complete";
+        }, 10000); // 30,000 milliseconds = 30 seconds
+    </script>
+</body>
+</html>
+
+
+@* @{
+    ViewData["Title"] = "Home Page";
+}
+
+    <script>
+        // Use setTimeout to delay rendering
+        setTimeout(function () {
+            // Change the message after the delay
+            document.getElementById("message").textContent = "Page rendered after a 30-second delay.";
+        }, 30000); // 30,000 milliseconds = 30 seconds
+    </script>
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+ *@
